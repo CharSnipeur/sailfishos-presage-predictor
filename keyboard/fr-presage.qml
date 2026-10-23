@@ -83,7 +83,10 @@ KeyboardLayout {
         CharacterKey { caption: "v"; captionShifted: "V"; symView: "\\"; symView2: "“" }
         CharacterKey { caption: "b"; captionShifted: "B"; symView: "'"; symView2: "”" }
         CharacterKey { caption: "n"; captionShifted: "N"; symView: ";"; symView2: "„" }
-        CharacterKey { caption: ","; captionShifted: "<"; symView: "."; symView2: ">" }
+        // Apostrophe gets the slot right of N (the old ,/< key): comma is already
+        // available left of the spacebar and < is rarely needed, while ' is essential
+        // in French. Period and > stay reachable through this key's symbol views.
+        CharacterKey { caption: "'"; captionShifted: "\""; symView: "."; symView2: ">" }
 
         BackspaceKey {}
     }
